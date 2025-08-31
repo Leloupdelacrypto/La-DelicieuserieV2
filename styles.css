@@ -135,3 +135,66 @@ footer {
         display: flex;
     }
 }
+/* ===== Header avec image de fond (safe merge) ===== */
+
+/* (Optionnel) variables si tu veux changer facilement d'image */
+:root{
+  --header-bg-desktop: url("images/fond-biscuits.jpg");
+  --header-bg-mobile:  url("images/fond-biscuits-mobile.jpg");
+}
+
+header{
+  position: relative;
+  color: #fff;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  /* Image de fond */
+  background-image: var(--header-bg-desktop);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* On supprime l’éventuel espace blanc */
+  margin: 0;
+}
+
+/* Voile pour la lisibilité du texte */
+header::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.25));
+  z-index: 0;
+}
+
+/* On garde ton layout de nav, mais on change l’arrière-plan SEULEMENT dans le header */
+header nav{
+  background: rgba(0,0,0,.35);   /* remplace le blanc du nav dans le header */
+  box-shadow: none;               /* évite l’ombre sur l’image */
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 16px auto;
+  position: relative;
+  z-index: 1;                     /* au-dessus du voile */
+}
+
+/* Lisibilité du logo et des liens dans le header */
+header .logo{ color: #fff; }
+header .nav-links a{ color: #fff; }
+
+/* Menu mobile (on respecte ta logique .nav-active existante) */
+@media (max-width: 768px){
+  header{
+    background-image: var(--header-bg-mobile), var(--header-bg-desktop);
+    background-position: center 30%;
+    min-height: 220px;
+  }
+  /* Le dropdown mobile quand nav a .nav-active */
+  header .nav-links{
+    background: rgba(0,0,0,.8);  /* foncé pour contraste sur l’image */
+    color: #fff;
+  }
+  header .nav-links a{ color: #fff; }
+}
+
