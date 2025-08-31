@@ -1,26 +1,154 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Délicieuserie</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    <header>
-        <nav>
-            <h1 class="logo">La Délicieuserie</h1>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#produits">Les biscuits</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger" id="burger">
-                <div></div><div></div><div></div>
-            </div>
-        </nav>
-    </header>
+/* ============ Header avec image de fond responsive ============ */
+
+:root{
+  /* Change simplement ces URLs si besoin */
+  --header-bg-desktop: url("images/fond-biscuits.jpg");
+  --header-bg-mobile:  url("images/fond-biscuits-mobile.jpg"); /* optionnel */
+  --overlay: rgba(0,0,0,0.35); /* voile de lisibilité */
+}
+
+/* Reset minimal utile pour éviter des surprises */
+header { margin: 0; }
+
+/* Le header devient un "hero" avec image de fond */
+header{
+  position: relative;
+  color: #fff;
+  /* Hauteur fluide : mini 220px, idéale 28vh, maxi 420px */
+  min-height: clamp(220px, 28vh, 420px);
+  display: flex;
+  align-items: center;
+  isolation: isolate; /* pour que l’overlay reste dans le header */
+  /* Fallback couleur si l'image ne charge pas */
+  background-color: #1f1f1f;
+  /* Image par défaut (desktop) */
+  background-image: var(--header-bg-desktop);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Voile sombre par-dessus l'image pour garder le texte lisible */
+header::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+  z-index: -1; /* derrière le contenu du header mais au-dessus du bg */
+}
+
+/* Barrette de navigation */
+header nav{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  /* voile additionnel léger pour la nav (améliore contraste) */
+  background: color-mix(in oklab, var(--overlay) 60%, transparent);
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+}
+
+/* Logo + Nav */
+header .logo{
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: clamp(10px, 2.5vw, 28px);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 6px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Burger (déjà dans ton HTML) : masqué sur desktop */
+.burger{
+  width: 28px;
+  height: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.burger > div{
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ======= Petits écrans (mobile) ======= */
+@media (max-width: 768px){
+  /* On peut basculer sur une image plus légère si tu en as une */
+  header{
+    background-image: var(--header-bg-mobile), var(--header-bg-desktop);
+    /* On recadre un peu plus haut pour éviter de couper les sujets importants */
+    background-position: center 30%;
+    min-height: clamp(180px, 28vh, 320px);
+  }
+
+  header nav{
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .nav-links{
+    position: absolute;
+    right: 12px;
+    top: calc(100% + 8px);
+    flex-direction: column;
+    gap: 10px;
+    background: color-mix(in oklab, #000 55%, transparent);
+    padding: 12px;
+    border-radius: 10px;
+    display: none; /* cachée par défaut sur mobile */
+  }
+  .nav-links.is-open{ display: flex; }
+
+  .burger{ display: flex; }
+}
+
+/* ======= Très petits écrans ======= */
+@media (max-width: 420px){
+  .logo{ font-size: clamp(1.2rem, 6vw, 1.6rem); }
+}
+
+/* ======= Écrans larges (grandes images) ======= */
+@media (min-width: 1400px){
+  header{
+    background-position: center 40%;
+    min-height: clamp(320px, 32vh, 520px);
+  }
+}
+
+/* Accessibilité : si l’utilisateur préfère moins d’effets */
+@media (prefers-reduced-motion: reduce){
+  header nav{ backdrop-filter: none; }
+}
+
 
     <section id="accueil" class="hero">
         <div class="hero-content">
