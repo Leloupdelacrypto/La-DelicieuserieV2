@@ -1,120 +1,325 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!DOCTYPE html>
-<html lang="fr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Délicieuserie</title>
+    <meta name="description" content="Site vitrine moderne et responsive inspiré du cabinet de diététique de Louann Cousseau." />
+    <title>Site vitrine - Modèle professionnel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- En-tête / navigation -->
-    <header>
-        <nav>
-            <h1 class="logo">La Délicieuserie</h1>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#produits">Les biscuits</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <!-- Icône “burger” pour mobile -->
-            <div class="burger" id="burger">
-                <div></div>
-                <div></div>
-                <div></div>
+    <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+    <header class="site-header" id="accueil">
+        <div class="top-banner">
+            <div class="container">
+                <p>Consultations en présentiel &amp; en ligne • Rendez-vous du lundi au samedi</p>
+                <div class="top-banner__cta">
+                    <a href="tel:+33600000000" class="top-link">06 00 00 00 00</a>
+                    <a href="#contact" class="top-link">Prendre rendez-vous</a>
+                </div>
             </div>
-        </nav>
+        </div>
+        <div class="container">
+            <div class="navbar" role="navigation" aria-label="Navigation principale">
+                <a class="brand" href="#accueil">
+                    <img src="assets/logo.png" alt="Logo du cabinet" />
+                    <span>
+                        <strong>Louann Cousseau</strong>
+                        <small>Diététicienne - Nutritionniste</small>
+                    </span>
+                </a>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+                    <span class="sr-only">Ouvrir le menu</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav id="primary-menu" class="nav-links">
+                    <a href="#accueil">Accueil</a>
+                    <a href="#approche">Approche</a>
+                    <a href="#services">Accompagnements</a>
+                    <a href="#consultations">Consultations</a>
+                    <a href="#temoignages">Avis</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="hero" role="presentation">
+            <div class="container hero__content">
+                <p class="hero__subtitle">Retrouvez un équilibre durable</p>
+                <h1 class="hero__title">Une approche nutritionnelle <br />bienveillante &amp; personnalisée</h1>
+                <p class="hero__text">
+                    Je vous accompagne pas à pas vers des habitudes alimentaires sereines, adaptées à votre rythme de vie et à vos objectifs.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="#contact">Prendre rendez-vous</a>
+                    <a class="btn btn--ghost" href="#services">Découvrir mes accompagnements</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    
+    <main id="main">
+        <section class="highlights" aria-labelledby="highlights-title">
+            <div class="container">
+                <h2 id="highlights-title" class="section-title">Pourquoi choisir cet accompagnement&nbsp;?</h2>
+                <div class="highlight-grid">
+                    <article class="highlight-card">
+                        <div class="highlight-icon" aria-hidden="true">🍽️</div>
+                        <h3>Approche intuitive</h3>
+                        <p>On oublie les régimes restrictifs. L’objectif est de retrouver une relation apaisée à l’alimentation et à son corps.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="highlight-icon" aria-hidden="true">🤝</div>
+                        <h3>Accompagnement humain</h3>
+                        <p>Chaque séance est pensée comme un moment d’écoute et d’échanges pour construire un suivi à votre image.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="highlight-icon" aria-hidden="true">🎯</div>
+                        <h3>Objectifs durables</h3>
+                        <p>Des outils concrets et personnalisés pour ancrer de nouvelles habitudes et gagner en bien-être au quotidien.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
+        <section class="about" id="apropos" aria-labelledby="about-title">
+            <div class="container about__wrapper">
+                <div class="about__image" role="presentation">
+                    <img src="images/produit2.jpg" alt="Portrait ou illustration" />
+                </div>
+                <div class="about__content">
+                    <h2 id="about-title" class="section-title">Louann Cousseau</h2>
+                    <p class="section-subtitle">Diététicienne-Nutritionniste diplômée &amp; passionnée</p>
+                    <p>
+                        J’accompagne adultes, adolescents et enfants pour retrouver une alimentation sereine, sans culpabilité. Mon approche repose sur l’écoute active, la pédagogie et le respect de votre rythme.
+                    </p>
+                    <p>
+                        Qu’il s’agisse de troubles digestifs, de rééquilibrage alimentaire ou d’un accompagnement lié à une pathologie, nous avançons ensemble, pas à pas.
+                    </p>
+                    <ul class="about__list">
+                        <li>Consultations en cabinet et en visio</li>
+                        <li>Plans alimentaires personnalisés</li>
+                        <li>Suivi régulier et ressources à chaque étape</li>
+                    </ul>
+                    <a class="btn btn--primary" href="#contact">Échanger ensemble</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h2>Bienvenue chez <span>La Délicieuserie</span></h2>
-            <p>Des produits artisanaux uniques et savoureux.</p>
-            <a href="#produits" class="btn">Voir nos biscuits</a>
+        <section class="approach" id="approche" aria-labelledby="approach-title">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 id="approach-title" class="section-title">Mon approche</h2>
+                    <p class="section-subtitle">Un parcours en trois temps pour construire un équilibre qui vous ressemble</p>
+                </div>
+                <div class="steps">
+                    <article class="step">
+                        <span class="step__number">01</span>
+                        <h3>Comprendre votre histoire</h3>
+                        <p>Un temps d’échange pour cerner vos habitudes, vos objectifs et vos contraintes afin de poser les bases du suivi.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__number">02</span>
+                        <h3>Co-construire votre plan</h3>
+                        <p>Des conseils concrets, des outils et des recettes adaptés à votre quotidien pour avancer à votre rythme.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step__number">03</span>
+                        <h3>Suivre &amp; ajuster</h3>
+                        <p>Des rendez-vous réguliers pour mesurer vos progrès, lever les freins et ancrer durablement les nouvelles habitudes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 id="services-title" class="section-title">Accompagnements proposés</h2>
+                    <p class="section-subtitle">Des consultations adaptées à vos besoins personnels et professionnels</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <img src="images/produit1.jpg" alt="Rééquilibrage alimentaire" />
+                        <div class="service-card__content">
+                            <h3>Rééquilibrage alimentaire</h3>
+                            <p>Identifier vos besoins, construire une alimentation variée, plaisir et santé réunis.</p>
+                            <ul>
+                                <li>Bilans complets</li>
+                                <li>Plans et recettes personnalisés</li>
+                                <li>Suivi motivationnel</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="images/produit3.jpg" alt="Pathologies et troubles digestifs" />
+                        <div class="service-card__content">
+                            <h3>Pathologies &amp; troubles digestifs</h3>
+                            <p>Adapter votre alimentation en cas de diabète, hypercholestérolémie, MICI, intolérances…</p>
+                            <ul>
+                                <li>Collaboration avec votre médecin</li>
+                                <li>Supports pédagogiques</li>
+                                <li>Suivi régulier</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="images/produit4.jpg" alt="Nutrition du sportif" />
+                        <div class="service-card__content">
+                            <h3>Nutrition du sportif</h3>
+                            <p>Optimiser vos performances, favoriser la récupération et prévenir les blessures.</p>
+                            <ul>
+                                <li>Programme individualisé</li>
+                                <li>Stratégies autour des entraînements</li>
+                                <li>Suivi de la composition corporelle</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="consultations" id="consultations" aria-labelledby="consultations-title">
+            <div class="container consultations__wrapper">
+                <div class="consultations__content">
+                    <h2 id="consultations-title" class="section-title">Déroulé des consultations</h2>
+                    <p class="section-subtitle">Des rendez-vous structurés pour avancer en toute sérénité</p>
+                    <div class="timeline">
+                        <article class="timeline__item">
+                            <h3>1. Bilan initial – 1h</h3>
+                            <p>Analyse complète de votre mode de vie, de vos habitudes alimentaires et de vos objectifs.</p>
+                        </article>
+                        <article class="timeline__item">
+                            <h3>2. Plan d’action personnalisé</h3>
+                            <p>Remise d’outils pratiques, fiches conseils, idées menus et astuces pour gérer le quotidien.</p>
+                        </article>
+                        <article class="timeline__item">
+                            <h3>3. Séances de suivi – 30 min</h3>
+                            <p>Évaluation des progrès, ajustements, motivation et réponses à toutes vos questions.</p>
+                        </article>
+                    </div>
+                    <a class="btn btn--ghost" href="#contact">Demander les tarifs</a>
+                </div>
+                <div class="consultations__image" role="presentation">
+                    <img src="hero.jpg" alt="Salle de consultation" />
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="temoignages" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 id="testimonials-title" class="section-title">Elles &amp; ils en parlent</h2>
+                    <p class="section-subtitle">Des témoignages authentiques de personnes accompagnées</p>
+                </div>
+                <div class="testimonials__slider" role="region" aria-live="polite">
+                    <button class="slider__control" data-direction="prev" aria-label="Témoignage précédent">&#10094;</button>
+                    <div class="slider__track">
+                        <figure class="testimonial">
+                            <blockquote>
+                                «&nbsp;Louann m’a aidée à retrouver confiance et plaisir dans mon alimentation. Les résultats sont là et sans frustration&nbsp;!&nbsp;»
+                            </blockquote>
+                            <figcaption>Élodie – Programme bien-être</figcaption>
+                        </figure>
+                        <figure class="testimonial">
+                            <blockquote>
+                                «&nbsp;Un accompagnement très professionnel et humain. Chaque séance est motivante et rassurante.&nbsp;»
+                            </blockquote>
+                            <figcaption>Marc – Suivi nutritionnel sportif</figcaption>
+                        </figure>
+                        <figure class="testimonial">
+                            <blockquote>
+                                «&nbsp;Grâce aux outils donnés par Louann, j’ai trouvé un équilibre durable malgré mes contraintes familiales.&nbsp;»
+                            </blockquote>
+                            <figcaption>Sarah – Rééquilibrage alimentaire</figcaption>
+                        </figure>
+                    </div>
+                    <button class="slider__control" data-direction="next" aria-label="Témoignage suivant">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container cta__wrapper">
+                <div>
+                    <h2 id="cta-title">Prêt·e à démarrer&nbsp;?</h2>
+                    <p>Réservez votre rendez-vous découverte de 15 minutes offert pour faire le point sur vos besoins.</p>
+                </div>
+                <a class="btn btn--primary" href="mailto:contact@exemple.fr">Contact direct</a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="container contact__grid">
+                <div>
+                    <h2 id="contact-title" class="section-title">Contact &amp; informations pratiques</h2>
+                    <p class="section-subtitle">Cabinet situé au 12 rue des Cerisiers, 62000 Arras</p>
+                    <ul class="contact__list">
+                        <li>
+                            <span class="contact__icon" aria-hidden="true">📞</span>
+                            <a href="tel:+33600000000">06 00 00 00 00</a>
+                        </li>
+                        <li>
+                            <span class="contact__icon" aria-hidden="true">✉️</span>
+                            <a href="mailto:contact@exemple.fr">contact@exemple.fr</a>
+                        </li>
+                        <li>
+                            <span class="contact__icon" aria-hidden="true">📍</span>
+                            <span>12 rue des Cerisiers, 62000 Arras</span>
+                        </li>
+                    </ul>
+                    <p class="contact__info">
+                        Accès en bus ligne B (arrêt République) – Stationnement gratuit à proximité.
+                    </p>
+                </div>
+                <form class="contact__form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input id="name" name="name" type="text" placeholder="Votre nom" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input id="email" name="email" type="email" placeholder="vous@exemple.fr" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input id="phone" name="phone" type="tel" placeholder="06 00 00 00 00" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Parlez-moi de votre projet"></textarea>
+                    </div>
+                    <button class="btn btn--primary" type="submit">Envoyer le message</button>
+                    <p class="form-disclaimer">En soumettant ce formulaire, vous acceptez d’être recontacté·e par e-mail.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__grid">
+            <div>
+                <strong>Louann Cousseau</strong>
+                <p>Diététicienne - Nutritionniste</p>
+                <p>Numéro ADELI&nbsp;: 000000000</p>
+            </div>
+            <div>
+                <p>&copy; <span id="current-year"></span> Tous droits réservés.</p>
+                <a href="#">Mentions légales</a>
+            </div>
+            <div class="footer__socials">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            </div>
         </div>
-    </section>
-
-    <section id="produits" class="produits">
-        <h2>Nos Produits</h2>
-        <div class="grid-produits">
-            <div class="card-produit">
-                <img src="images/produit1.jpg" alt="Produit 1" />
-                <h3>Sablé</h3>
-                <p>Sablé artisanal personnalisable.</p>
-                <a href="#" class="btn btn-small">Détails</a>
-            </div>
-            <div class="card-produit">
-                <img src="images/produit2.jpg" alt="Produit 2" />
-                <h3>Sablé</h3>
-                <p>Sablé artisanal personnalisable.</p>
-                <a href="#" class="btn btn-small">Détails</a>
-            </div>
-            <div class="card-produit">
-                <img src="images/produit3.jpg" alt="Produit 3" />
-                <h3>Sablé</h3>
-                <p>Sablé artisanal personnalisable.</p>
-                <a href="#" class="btn btn-small">Détails</a>
-            </div>
-            <div class="card-produit">
-                <img src="images/produit4.jpg" alt="Produit 4" />
-                <h3>sablé</h3>
-                <p>Sablé artisanal personnalisable.</p>
-                <a href="#" class="btn btn-small">Détails</a>
-            </div> 
-            -- Dupliquez ce bloc pour chaque produit -->
-        </div>
-    </section>
-
-    <section id="apropos" class="apropos">
-  <h2>À propos</h2>
-  
-  <p>✨ <strong>La Délicieuserie – Biscuiterie artisanale et personnalisée à Calais</strong> ✨</p>
-  
-  <p>Bienvenue à <strong>La Délicieuserie</strong>, une biscuiterie artisanale à taille humaine, installée au cœur de Calais.<br>
-  Ici, chaque sablé est pensé comme une petite attention unique, fabriqué avec soin et passion.</p>
-  
-  <p>Nous travaillons exclusivement avec des <strong>matières premières issues de l’agriculture biologique</strong>, 
-  pour vous garantir des biscuits savoureux, authentiques et respectueux de l’environnement.</p>
-  
-  <p>Notre spécialité ? Le <strong>sablé 100% personnalisable</strong>.  
-  Que vous soyez particulier ou entreprise, nous donnons vie à vos envies :</p>
-  
-  <ul>
-    <li>choix de la <strong>forme</strong> et de la <strong>taille</strong>,</li>
-    <li>ajout d’un <strong>prénom</strong>, d’un <strong>message</strong> ou d’une <strong>date</strong>,</li>
-    <li>intégration d’un <strong>dessin</strong>, d’un <strong>logo</strong> ou d’un motif unique.</li>
-  </ul>
-  
-  <p>Chaque biscuit devient ainsi un support gourmand pour transmettre vos émotions, marquer un événement ou valoriser votre image.</p>
-  
-  <p>Que ce soit pour un <strong>mariage</strong>, une <strong>naissance</strong>, un <strong>anniversaire</strong>, 
-  ou encore pour des <strong>cadeaux d’entreprise</strong> et événements professionnels, 
-  nous vous accompagnons pour créer des douceurs qui reflètent parfaitement votre univers.</p>
-  
-  <p>Parce qu’ici, rien n’est industriel : chaque sablé est façonné à la main, 
-  dans une démarche <strong>locale, humaine et artisanale</strong>, où la gourmandise rencontre la créativité.</p>
-</section>
-
-
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <form>
-            <label>Nom :<input type="text" name="nom" required /></label>
-            <label>Email :<input type="email" name="email" required /></label>
-            <label>Message :<textarea name="message" rows="4"></textarea></label>
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© 2024 La Délicieuserie. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
